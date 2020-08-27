@@ -16,3 +16,9 @@ def randomQuiz(request,id):
     randomQuizs = random.sample(list(totalQuizs),id)
     serializer = QuizSerializer(randomQuizs,many=True)
     return Response(serializer.data)
+
+@api_view(['GET'])
+def flowerFall(request):
+    f = open("Flower_Fall__Flaming_Heart", "r")
+    print(f.read())
+    return Response(f.read())
